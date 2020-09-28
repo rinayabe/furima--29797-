@@ -34,10 +34,10 @@
 
 ### Association
 
-- belongs_to :user
-- has_one :buyers
+- belongs_to :users
+- has_one :buyer
 
-## buyer テーブル
+## buyers テーブル
 
 | Column   | Type      | Options                        |
 | -------- | --------- | ------------------------------ |
@@ -46,9 +46,11 @@
 
 ### Association
 
-- belongs_to :place
+- has_one :place
+- belongs_to :users
+- belongs_to :items
 
-## place テーブル
+## places テーブル
 
 | Column        | Type      | Options                        |
 | ------------- | --------- | ------------------------------ |
@@ -62,4 +64,4 @@
 
 ### Association
 
-- belongs_to :buyer
+- belongs_to :buyers
