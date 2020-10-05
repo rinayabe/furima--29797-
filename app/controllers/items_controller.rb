@@ -1,4 +1,10 @@
 class ItemsController < ApplicationController
-  def index  # indexアクションを定義した
+
+  def index 
   end
+
+  def new
+  end
+  
+  
 end
