@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  def index 
+  def index
     @items = Item.all
   end
 
@@ -9,14 +9,13 @@ class ItemsController < ApplicationController
   end
 
   def create
-  @item = Item.new(item_params)
-  if @item.save
-    redirect_to action: :index
-  else
-    render action: :new
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to action: :index
+    else
+      render action: :new
+    end
   end
-end
-
 
   private
 
@@ -25,9 +24,6 @@ end
   end
 end
 
-
 def move_to_index
-  unless user_signed_in?
-    redirect_to action: :index
-  end
+  redirect_to action: :index unless user_signed_in?
 end
