@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :password, format: {with:/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i}
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i }
 
   with_options presence: true do
     validates :nickname
@@ -12,14 +12,14 @@ class User < ApplicationRecord
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\z/i.freeze
 
     validates :email,              uniqueness: true
-    validates_format_of :email,    with: VALID_EMAIL_REGEX 
+    validates_format_of :email,    with: VALID_EMAIL_REGEX
 
-    NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/
+    NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/.freeze
 
     validates :family_name,        format: { with: NAME_REGEX }
     validates :first_name,         format: { with: NAME_REGEX }
 
-    NAME_KANA_REGEX = /\A[ァ-ン]+\z/
+    NAME_KANA_REGEX = /\A[ァ-ン]+\z/.freeze
 
     validates :family_name_kana,   format: { with: NAME_KANA_REGEX }
     validates :first_name_kana,    format: { with: NAME_KANA_REGEX }
