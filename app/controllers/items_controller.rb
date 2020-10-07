@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   #before_action :move_to_index, except: [:index, :show]
   def index
-    @items = Item.all
+    ＃@items = Item.all
   end
 
   def new
-    #@item = Item.new
+    @item = Item.new
   end
 
   def create
