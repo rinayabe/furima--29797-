@@ -242,12 +242,15 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  
 }
 
 .item-lists>.list {
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
+  display: flex;
+  justify-content: space-around;
 }
 
 
@@ -258,6 +261,7 @@ a {
 .item-img {
   width: 33vh;
   height: 33vh;
+  
 }
 
 .sold-out {
