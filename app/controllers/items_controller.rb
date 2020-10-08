@@ -1,11 +1,12 @@
 class ItemsController < ApplicationController
   # before_action :move_to_index, except: [:index, :show]
   def index
-    @items = Item.all.order("created_at DESC")
+    @items = Item.all.order('created_at DESC')
   end
 
   def new
     @item = Item.new
+    
   end
 
   def create
@@ -15,6 +16,10 @@ class ItemsController < ApplicationController
     else
       render action: :new
     end
+  end
+
+  def show
+    @item = Item.find(params[:id])
   end
 
   private
