@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :fee
   belongs_to_active_hash :area
   belongs_to_active_hash :days
+  belongs_to :user
 
   with_options presence: true do
     validates :image
