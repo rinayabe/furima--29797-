@@ -8,7 +8,7 @@ FactoryBot.define do
     area_id              { '2' }
     days_id              { '2' }
     price                { '500' }
-    user_id { '5'}
+    user_id { '5' }
 
     after(:build) do |item|
       item.image.attach(io: File.open('public/apple-touch-icon.png'), filename: 'test_image.png')
