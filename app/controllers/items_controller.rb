@@ -57,5 +57,5 @@ def set_item
 end
 
 def move_to_new
-  redirect_to action: :new unless (user_signed_in? && current_user.id == @item.user_id)
+  redirect_to action: :new unless user_signed_in? && current_user.id == @item.user_id
 end
