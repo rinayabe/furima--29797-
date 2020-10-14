@@ -1,15 +1,14 @@
 class OrdersController < ApplicationController
   before_action :move_to_root_path, only: [:index]
+  before_action :item, only: [:index, :create]
 
   def index
     redirect_to new_user_session_path unless user_signed_in?
-    @item = Item.find(params[:item_id])
     redirect_to root_path if user_signed_in? && current_user.id == @item.user_id
     @order = Order.new
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order = OrderPlace.new(order_params)
     if @order.valid?
       pay_item
@@ -39,4 +38,9 @@ class OrdersController < ApplicationController
     @item = Item.find(params[:item_id])
     redirect_to root_path unless @item.order.nil?
   end
+
+  def item
+    @item = Item.find(params[:item_id])
+  end
+
 end

@@ -2,10 +2,6 @@ class OrderPlace
   include ActiveModel::Model
   attr_accessor :post_code, :area_id, :city, :address, :building_name, :phone_number, :user_id, :item_id, :token
 
-  # VALID_CARD_NUMBER_REGEX = /\A\d{14,16}\z/
-  # VALID_YAER_REGEX = /\A\d{2}\z/
-  # VALID_MONTH_REGEX = /\A\d{2}\z/
-  # VALID_CVC_REGEX = /\A\d{3,4}\z/
   with_options presence: true do
     validates :token
     VALID_POST_CODE_REGEX = /\A\d{3}[-]\d{4}\z/.freeze
