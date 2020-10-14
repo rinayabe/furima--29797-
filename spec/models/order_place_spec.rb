@@ -11,43 +11,8 @@ RSpec.describe OrderPlace, type: :model do
         expect(@order_place).to be_valid
       end
 
-      it 'tokenが存在すれば保存できること' do
-        @order_place.token = '1111'
-        expect(@order_place).to be_valid
-      end
-
-      it '郵便番号が存在すれば保存できること' do
-        @order_place.post_code = '123-4567'
-        expect(@order_place).to be_valid
-      end
-
-      it '都道府県が存在すれば保存できること' do
-        @order_place.area_id = '1'
-        expect(@order_place).to be_valid
-      end
-
-      it '市区町村が存在すれば保存できること' do
-        @order_place.city = 'あああ'
-        expect(@order_place).to be_valid
-      end
-
-      it '番地が存在すれば保存できること' do
-        @order_place.address = '123'
-        expect(@order_place).to be_valid
-      end
-
-      it '電話番号が存在すれば保存できること' do
-        @order_place.phone_number = '11111111111'
-        expect(@order_place).to be_valid
-      end
-
-      it '電話番号が11桁以内であれば保存できること' do
-        @order_place.phone_number = '11111111'
-        expect(@order_place).to be_valid
-      end
-
-      it '電話番号が数字だけであれば保存できること' do
-        @order_place.phone_number = '11111111111'
+      it '建物番号がなくても保存できる' do
+        @order_place.building_name = nil
         expect(@order_place).to be_valid
       end
     end

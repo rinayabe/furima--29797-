@@ -5,6 +5,7 @@ FactoryBot.define do
     area_id              { '2' }
     city                 { 'あいう' }
     address              { '333' }
+    building_name         {'えおか'}
     phone_number         { '00000000000' }
   end
 end
